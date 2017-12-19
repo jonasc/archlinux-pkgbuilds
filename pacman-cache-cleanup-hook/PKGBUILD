@@ -1,0 +1,13 @@
+pkgname=pacman-cache-cleanup-hook
+pkgver=1.0
+pkgrel=1
+pkgdesc='A hook which removes old pacman packages.'
+arch=('any')
+license=('GPL3')
+depends=('pacman')
+source=('cache-cleanup.hook')
+sha256sums=('1f6b274c3309822e16a592c00be47219cbdfcb090e2573ed8f759ec8a317b2bf')
+
+package() {
+    install -D -m644 cache-cleanup.hook "${pkgdir}/etc/pacman.d/hooks/cache-cleanup.hook"
+}

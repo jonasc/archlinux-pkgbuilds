@@ -1,0 +1,12 @@
+pkgbase = pacman-cache-cleanup-hook
+	pkgdesc = A hook which removes old pacman packages.
+	pkgver = 1.0
+	pkgrel = 1
+	arch = any
+	license = GPL3
+	depends = pacman
+	source = cache-cleanup.hook
+	sha256sums = 1f6b274c3309822e16a592c00be47219cbdfcb090e2573ed8f759ec8a317b2bf
+
+pkgname = pacman-cache-cleanup-hook
+
