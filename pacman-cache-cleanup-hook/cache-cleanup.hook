@@ -8,7 +8,7 @@ Type = Package
 Target = *
 
 [Action]
-Description = "Keep three versions of installed and none of uninstalled packages."
+Description = "Clean pacman cache. Keep 3 versions of installed and 0 of uninstalled packages."
 # … execute paccache…
 Exec = /usr/bin/sh -c '/usr/bin/paccache --remove --keep 3 --verbose && /usr/bin/paccache --remove --uninstalled --keep 0 --verbose'
 # … after the actual operation was performed
