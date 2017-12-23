@@ -1,0 +1,12 @@
+pkgbase = reflector-timer-config
+	pkgdesc = A config file for reflector-timer.
+	pkgver = 1.0
+	pkgrel = 1
+	arch = any
+	license = GPL3
+	depends = reflector-timer
+	source = reflector.conf
+	sha256sums = 204baa95b4d5018644d9245133a012e83b4a5edff372f029223190077d39f6f3
+
+pkgname = reflector-timer-config
+
