@@ -1,0 +1,47 @@
+pkgname=dnscrypt-systemd-units
+pkgver=1.0
+pkgrel=1
+pkgdesc='A systemd unit file and several socket files for DNSCrypt.'
+arch=('any')
+license=('GPL3')
+depends=('dnscrypt-proxy')
+install=${pkgname}.install
+source=(
+    'dnscrypt-systemd-units.install'
+    'dnscrypt-proxy@.service'
+    'dnscrypt-proxy@cs-ch.socket'
+    'dnscrypt-proxy@cs-de.socket'
+    'dnscrypt-proxy@cs-de3.socket'
+    'dnscrypt-proxy@cs-nl.socket'
+    'dnscrypt-proxy@dnscrypt.eu-dk-ipv6.socket'
+    'dnscrypt-proxy@dnscrypt.eu-dk.socket'
+    'dnscrypt-proxy@opennic-tumabox-ipv6.socket'
+    'dnscrypt-proxy@opennic-tumabox.socket'
+    'dnscrypt-proxy@securedns-ipv6.socket'
+)
+sha256sums=(
+    'c33578ff1fac91c9bfe26bd65e75aef5be8a1e1084578edde25e306202aba4f6'
+    '327f6b1420394a805c6dc9b88b1b5784ad99cf8ac15caec0c58e5a9fe7f3d445'
+    '569362605ebd343667748300fcf4b883c44c949855e9f390ce925831b7518fc7'
+    'f60a04b8574f93293392ffaec7a36052729d9c27935541026d0489b1b16bbd47'
+    'b3b042185f54b948b4cfc683b26c68facc10d35113982e07a3b8a514ecb5d04b'
+    '14417213729f8f6ad828bdd219fd21b2e30281ed4e872cea5352189b507fe696'
+    '30b9fe0130eb23568a7964703e403a8448b36e774ecc393313155be775864f29'
+    'e5b7bab459611d6dfb6ca9b487b40ca6e5c1d5237987a582c27d5aa83823e283'
+    '44bd0e4a81e2fcb4e7a121c10e4e4ba5e23702cb3e02c0a3fab73842a269bd1d'
+    'ea2a89df0df26e401f6371a4f7013d39aff7df97932c8f7a5e24e6b4e50145af'
+    'c4646c368ab2fc6b7a546c2c2b2827f31670b3b9e0659c01af81238e6551638e'
+)
+
+package() {
+    install -D -m644 dnscrypt-proxy@.service "${pkgdir}/etc/systemd/system/dnscrypt-proxy@.service"
+    install -D -m644 dnscrypt-proxy@cs-ch.socket "${pkgdir}/etc/systemd/system/dnscrypt-proxy@cs-ch.socket"
+    install -D -m644 dnscrypt-proxy@cs-de.socket "${pkgdir}/etc/systemd/system/dnscrypt-proxy@cs-de.socket"
+    install -D -m644 dnscrypt-proxy@cs-de3.socket "${pkgdir}/etc/systemd/system/dnscrypt-proxy@cs-de3.socket"
+    install -D -m644 dnscrypt-proxy@cs-nl.socket "${pkgdir}/etc/systemd/system/dnscrypt-proxy@cs-nl.socket"
+    install -D -m644 dnscrypt-proxy@dnscrypt.eu-dk-ipv6.socket "${pkgdir}/etc/systemd/system/dnscrypt-proxy@dnscrypt.eu-dk-ipv6.socket"
+    install -D -m644 dnscrypt-proxy@dnscrypt.eu-dk.socket "${pkgdir}/etc/systemd/system/dnscrypt-proxy@dnscrypt.eu-dk.socket"
+    install -D -m644 dnscrypt-proxy@opennic-tumabox-ipv6.socket "${pkgdir}/etc/systemd/system/dnscrypt-proxy@opennic-tumabox-ipv6.socket"
+    install -D -m644 dnscrypt-proxy@opennic-tumabox.socket "${pkgdir}/etc/systemd/system/dnscrypt-proxy@opennic-tumabox.socket"
+    install -D -m644 dnscrypt-proxy@securedns-ipv6.socket "${pkgdir}/etc/systemd/system/dnscrypt-proxy@securedns-ipv6.socket"
+}

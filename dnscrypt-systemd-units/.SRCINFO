@@ -1,0 +1,30 @@
+pkgbase = dnscrypt-systemd-units
+	pkgdesc = A systemd unit file and several socket files for DNSCrypt.
+	pkgver = 1.0
+	pkgrel = 1
+	arch = any
+	license = GPL3
+	depends = dnscrypt-proxy
+	source = dnscrypt-proxy@.service
+	source = dnscrypt-proxy@cs-ch.socket
+	source = dnscrypt-proxy@cs-de.socket
+	source = dnscrypt-proxy@cs-de3.socket
+	source = dnscrypt-proxy@cs-nl.socket
+	source = dnscrypt-proxy@dnscrypt.eu-dk-ipv6.socket
+	source = dnscrypt-proxy@dnscrypt.eu-dk.socket
+	source = dnscrypt-proxy@opennic-tumabox-ipv6.socket
+	source = dnscrypt-proxy@opennic-tumabox.socket
+	source = dnscrypt-proxy@securedns-ipv6.socket
+	sha256sums = 327f6b1420394a805c6dc9b88b1b5784ad99cf8ac15caec0c58e5a9fe7f3d445
+	sha256sums = 569362605ebd343667748300fcf4b883c44c949855e9f390ce925831b7518fc7
+	sha256sums = f60a04b8574f93293392ffaec7a36052729d9c27935541026d0489b1b16bbd47
+	sha256sums = b3b042185f54b948b4cfc683b26c68facc10d35113982e07a3b8a514ecb5d04b
+	sha256sums = 14417213729f8f6ad828bdd219fd21b2e30281ed4e872cea5352189b507fe696
+	sha256sums = 30b9fe0130eb23568a7964703e403a8448b36e774ecc393313155be775864f29
+	sha256sums = e5b7bab459611d6dfb6ca9b487b40ca6e5c1d5237987a582c27d5aa83823e283
+	sha256sums = 44bd0e4a81e2fcb4e7a121c10e4e4ba5e23702cb3e02c0a3fab73842a269bd1d
+	sha256sums = ea2a89df0df26e401f6371a4f7013d39aff7df97932c8f7a5e24e6b4e50145af
+	sha256sums = c4646c368ab2fc6b7a546c2c2b2827f31670b3b9e0659c01af81238e6551638e
+
+pkgname = dnscrypt-systemd-units
+
