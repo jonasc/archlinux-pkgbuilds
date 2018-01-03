@@ -6,7 +6,7 @@ pkgbase = pacman-cache-cleanup-hook
 	license = GPL3
 	depends = pacman
 	source = cache-cleanup.hook
-	sha256sums = 1f6b274c3309822e16a592c00be47219cbdfcb090e2573ed8f759ec8a317b2bf
+	sha256sums = 69eb61d9319421d0a2c1d5888c9f224e52cdff8bfc2e82c8a48b620806d9b543
 
 pkgname = pacman-cache-cleanup-hook
 
