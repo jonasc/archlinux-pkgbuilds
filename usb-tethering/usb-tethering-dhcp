@@ -1,0 +1,5 @@
+Description='A basic dhcp ethernet connection'
+Interface=tethering
+Connection=ethernet
+IP=dhcp
+IP6=stateless

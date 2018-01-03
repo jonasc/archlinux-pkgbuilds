@@ -1,0 +1,6 @@
+# Rules from package 'usb-tethering'
+# We match network interfaces which match specific vendors and products
+# Afterwards we rename the interface to 'usb-tethering' and restart the network profile
+
+# Samsung Galaxy S4 Mini
+ACTION=="add|move|change", SUBSYSTEM=="net", ATTRS{idVendor}=="04e8", ATTRS{idProduct}=="6864", NAME="tethering", RUN+="/usr/bin/systemctl restart 'netctl-ifplugd@%k.service'"

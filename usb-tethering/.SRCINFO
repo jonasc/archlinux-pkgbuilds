@@ -1,0 +1,15 @@
+pkgbase = usb-tethering
+	pkgdesc = udev rules and netctl profile files for automatic android usb tethering.
+	pkgver = 1.0
+	pkgrel = 1
+	arch = any
+	license = GPL3
+	depends = netctl
+	depends = ifplugd
+	source = 50-usb-tethering.rules
+	source = usb-tethering-dhcp
+	sha256sums = b3b251a74721b6fb44ce834395c6a1e63c32a328cd222384393fc9a210865c46
+	sha256sums = dff8a1914bb01f41a219aac61797e82c2bf02fe7b00c8da22acc9f2de0b7555d
+
+pkgname = usb-tethering
+
