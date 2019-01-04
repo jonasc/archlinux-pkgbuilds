@@ -1,0 +1,3 @@
+post_install () {
+    echo "You can edit '/etc/pacman-cache-cleanup-hook.conf' to change how many old package versions should be kept in the pacman cache."
+}

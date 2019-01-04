@@ -8,8 +8,8 @@ Type = Package
 Target = *
 
 [Action]
-Description = "Clean pacman cache. Keep 3 versions of installed and 0 of uninstalled packages."
+Description = "Clean pacman cache. Keep only a small number of old versions of installed and uninstalled packages."
 # … execute paccache…
-Exec = /usr/bin/sh -c '/usr/bin/paccache --remove --keep 3 --verbose && /usr/bin/paccache --remove --uninstalled --keep 0 --verbose'
+Exec = /usr/bin/sh -c 'KEEP_INSTALLED=3; KEEP_REMOVED=0; [ -f /etc/pacman-cache-cleanup-hook.conf ] && . /etc/pacman-cache-cleanup-hook.conf; /usr/bin/paccache --remove --keep "$KEEP_INSTALLED" --verbose && /usr/bin/paccache --remove --uninstalled --keep "$KEEP_REMOVED" --verbose'
 # … after the actual operation was performed
 When = PostTransaction
