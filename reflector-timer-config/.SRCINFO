@@ -1,7 +1,7 @@
 pkgbase = reflector-timer-config
 	pkgdesc = A config file for reflector-timer.
 	pkgver = 1.0
-	pkgrel = 1
+	pkgrel = 2
 	arch = any
 	license = GPL3
 	depends = reflector-timer

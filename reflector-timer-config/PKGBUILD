@@ -1,6 +1,6 @@
 pkgname=reflector-timer-config
 pkgver=1.0
-pkgrel=1
+pkgrel=2
 pkgdesc='A config file for reflector-timer.'
 arch=('any')
 license=('GPL3')
