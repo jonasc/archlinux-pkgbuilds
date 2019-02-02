@@ -1,0 +1,58 @@
+FILES=(
+    /etc/unbound/unbound.conf
+    /etc/resolvconf.conf
+)
+
+install() {
+    my="${1%.*}.my.${1##*.}"
+    backup="$1.backup"
+    if [[ -f "$1" ]]; then
+        echo "Create backup '$backup' of '$1'."
+        mv "$1" "$backup"
+    fi
+    echo "Link '$my' to '$1'."
+    ln --symbolic "$my" "$1"
+}
+
+remove() {
+    my="${1%.*}.my.${1##*.}"
+    backup="$1.backup"
+    if [[ -L "$1" ]] && [[ "$(readlink "$1")" == "$my" ]]; then
+        echo "Delete symlink '$1'."
+        rm "$1"
+        if [[ -f "$backup" ]]; then
+            echo "Restore backup '$backup' to '$1'."
+            mv "$backup" "$1"
+        fi
+    fi
+}
+
+# arg 1:  the new package version
+post_install() {
+    for FILE in "${FILES[@]}"; do
+        install "$FILE"
+    done
+}
+
+# arg 1:  the old package version
+pre_remove() {
+    for FILE in "${FILES[@]}"; do
+        remove "$FILE"
+    done
+}
+
+# arg 1:  the new package version
+# arg 2:  the old package version
+pre_upgrade() {
+    for FILE in "${FILES[@]}"; do
+        remove "$FILE"
+    done
+}
+
+# arg 1:  the new package version
+# arg 2:  the old package version
+post_upgrade() {
+    for FILE in "${FILES[@]}"; do
+        install "$FILE"
+    done
+}

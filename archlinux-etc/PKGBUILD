@@ -1,0 +1,33 @@
+pkgname=archlinux-etc
+pkgver=0.1
+pkgrel=1
+pkgdesc='Configuration files in /etc'
+arch=('any')
+license=('GPL3')
+source=(
+    # Unbound
+    'unbound.conf'
+    'root.hints::https://www.internic.net/domain/named.cache'
+    'adservers::https://pgl.yoyo.org/adservers/serverlist.php?hostformat=unbound&showintro=0&startdate%5Bday%5D=&startdate%5Bmonth%5D=&startdate%5Byear%5D=&mimetype=plaintext'
+    # openresolv
+    'resolvconf.conf'
+    # General settings
+    'shell-timeout.sh'
+)
+sha256sums=('762af8ad764ae2a8fc9c1761e176cd72aad431e4857289d8c7a9554dc70a94d0'
+            'a2571ec7cee6141e7355d4bf7b3f76ec192f2dc21a6b6a1e31bc76ec6236010f'
+            'bd214690b04bed8772049473ed14e7c089de22932543665107dbb9a86512c011'
+            'b451ff0cbd9daa51f6900be5b5fba47bffc25c4a312ea2e62e7d498ab9f7fb38'
+            '730a6905c849acc993abac9030adf46b12857b17f957f22825192ae9f4051e87')
+install=archlinux-etc.install
+
+package() {
+    # Unbound
+    install -D -m 644 'unbound.conf' "$pkgdir/etc/unbound/unbound.my.conf"
+    install -D -m 644 'root.hints' "$pkgdir/etc/unbound/root.hints"
+    install -D -m 644 'adservers' "$pkgdir/etc/unbound/adservers"
+    # openresolv
+    install -D -m 644 'resolvconf.conf' "$pkgdir/etc/resolvconf.my.conf"
+    # General settings
+    install -D -m 644 'shell-timeout.sh' "$pkgdir/etc/profile.d/shell-timeout.sh"
+}
