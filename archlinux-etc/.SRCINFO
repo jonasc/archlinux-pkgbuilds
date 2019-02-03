@@ -11,8 +11,8 @@ pkgbase = archlinux-etc
 	source = resolvconf.conf
 	source = shell-timeout.sh
 	sha256sums = 762af8ad764ae2a8fc9c1761e176cd72aad431e4857289d8c7a9554dc70a94d0
-	sha256sums = a2571ec7cee6141e7355d4bf7b3f76ec192f2dc21a6b6a1e31bc76ec6236010f
-	sha256sums = bd214690b04bed8772049473ed14e7c089de22932543665107dbb9a86512c011
+	sha256sums = SKIP
+	sha256sums = SKIP
 	sha256sums = b451ff0cbd9daa51f6900be5b5fba47bffc25c4a312ea2e62e7d498ab9f7fb38
 	sha256sums = 730a6905c849acc993abac9030adf46b12857b17f957f22825192ae9f4051e87
 
