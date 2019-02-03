@@ -6,7 +6,7 @@ arch=('any')
 license=('GPL3')
 depends=('reflector-timer')
 source=('reflector.conf')
-sha256sums=('204baa95b4d5018644d9245133a012e83b4a5edff372f029223190077d39f6f3')
+sha256sums=('a7a8aea07a19a25be92c4f86fd3895700a013395a3b5352cf7b17df2b57a46e0')
 
 package() {
     install -D -m644 reflector.conf "${pkgdir}/etc/conf.d/reflector.conf"
